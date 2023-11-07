@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import Opciones from './Opciones';
-import Navbar from './Navbar';
-import useCotizador from '../hooks/useCotizador';
-import usePresupuestos from '../hooks/usePresupuestos';
-import Swal from 'sweetalert2';
-import Footer from './Footer';
+import { useState, useEffect } from "react";
+import Opciones from "./Opciones";
+import Navbar from "./Navbar";
+import useCotizador from "../hooks/useCotizador";
+import usePresupuestos from "../hooks/usePresupuestos";
+import Swal from "sweetalert2";
+import Footer from "./Footer";
 
-const Cotizacion = () => {
+function Cotizacion() {
   const costoM2 = 35.86;
   const [precio, setPrecio] = useState(0);
   const [datos, setDatos] = useState([]);
@@ -15,7 +15,7 @@ const Cotizacion = () => {
   const realizarCotizacion = () => {
     const { metros2, propiedad, ubicacion } = elementos;
     if (!propiedad || metros2 < 20 || !ubicacion) {
-      Swal.fire('Error', 'Debes completar los datos', 'error');
+      Swal.fire("Error", "Debes completar los datos", "error");
     } else {
       const cuenta = costoM2 * metros2 * propiedad * ubicacion;
       setPrecio(cuenta.toFixed(2));
@@ -41,7 +41,7 @@ const Cotizacion = () => {
 
   useEffect(() => {
     const leer = async () => {
-      const response = await fetch('./data.json');
+      const response = await fetch("./data.json");
       const data = await response.json();
       setDatos(data);
     };
@@ -51,23 +51,23 @@ const Cotizacion = () => {
   return (
     <>
       <Navbar />
-      <form action='' onSubmit={(e) => e.preventDefault()}>
+      <form action="" onSubmit={(e) => e.preventDefault()}>
         <h1>Cotizador</h1>
         <Opciones
-          datos={datos.filter(({ categoria }) => categoria === 'propiedad')}
-          label={'Tipo de propiedad'}
-          tipo={'propiedad'}
+          datos={datos.filter(({ categoria }) => categoria === "propiedad")}
+          label={"Tipo de propiedad"}
+          tipo={"propiedad"}
         />
         <Opciones
-          datos={datos.filter(({ categoria }) => categoria === 'ubicacion')}
-          label={'Tipo de ubicacion'}
-          tipo={'ubicacion'}
+          datos={datos.filter(({ categoria }) => categoria === "ubicacion")}
+          label={"Tipo de ubicacion"}
+          tipo={"ubicacion"}
         />
-        <label htmlFor='metros2'>Ingrese los metros cuadrados</label>
+        <label htmlFor="metros2">Ingrese los metros cuadrados</label>
         <input
-          type='number'
-          id='metros2'
-          placeholder='Ingrese los metros cuadrados de la propiedad'
+          type="number"
+          id="metros2"
+          placeholder="Ingrese los metros cuadrados de la propiedad"
           min={20}
           defaultValue={20}
           onInput={(e) =>
@@ -81,23 +81,22 @@ const Cotizacion = () => {
             })
           }
         />
-        <label htmlFor='valor'>Valor de la cotización $: </label>
-        <input type='text' value={'$' + precio} placeholder='$' readOnly />
-        <button type='button' onClick={realizarCotizacion}>
+        <label htmlFor="valor">Valor de la cotización $: </label>
+        <input type="text" value={"$" + precio} placeholder="$" readOnly />
+        <button type="button" onClick={realizarCotizacion}>
           Cotizar
         </button>
         {precio !== 0 && (
           <>
-            <button type='button' onClick={guardarCotizacion}>
+            <button type="button" onClick={guardarCotizacion}>
               Guardar cotización
             </button>
-            
           </>
         )}
       </form>
       <Footer />
     </>
   );
-};
+}
 
 export default Cotizacion;

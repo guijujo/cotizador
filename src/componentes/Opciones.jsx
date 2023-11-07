@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
-import useCotizador from '../hooks/useCotizador';
+import PropTypes from "prop-types";
+import useCotizador from "../hooks/useCotizador";
 
-const Opciones = ({ datos, label, tipo }) => {
+function Opciones({ datos, label, tipo }) {
   const { elementos, setElementos } = useCotizador();
   return (
     <>
       <label htmlFor={tipo}>{label}</label>
       <select
         name={tipo}
-        id={tipo} 
+        id={tipo}
         defaultValue={0}
         onInput={(e) =>
           setElementos({
@@ -30,7 +30,7 @@ const Opciones = ({ datos, label, tipo }) => {
       </select>
     </>
   );
-};
+}
 
 Opciones.propTypes = {
   datos: PropTypes.arrayOf(
