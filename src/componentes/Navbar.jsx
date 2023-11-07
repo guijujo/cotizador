@@ -20,7 +20,7 @@ function Navbar() {
           </label>
         </div>
         <div className='nav-links'>
-          <Link to={'/'}><FaHouse/> Inicio</Link>
+          <Link to={'/Cotizador'}><FaHouse/> Inicio</Link>
           <Link to={'/Cotizacion'}><FaCalculator/> Cotizador</Link>
           <Link to={'/Presupuestos'}><FaClipboardList/> Presupuestos</Link>          
         </div>
