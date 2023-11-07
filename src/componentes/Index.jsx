@@ -8,7 +8,7 @@ const Index = () => {
       <Navbar />
       <article className='contenedor'>
       <Link to={'/Cotizacion'}>
-          <img src="/SegurosUNTREF.webp" alt='Logo SeguroUNTREF' title='Logo Seguro UNTREF'/>
+          <img src="/cotizador/SegurosUNTREF.webp" alt='Logo SeguroUNTREF' title='Logo Seguro UNTREF'/>
         </Link>
         <h1>Seguros de viviendas</h1>
         <p>Cotizamos tu vivienda al mejor precio</p>
