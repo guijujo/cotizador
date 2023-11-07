@@ -5,11 +5,10 @@ import { FaX } from 'react-icons/fa6'
 const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, onDelete }) => {
   const [prop, setProp] = useState(null);
   const [ubi, setUbi] = useState(null);
-  const urlAPI = "https://guijujo.github.io/datajson"
 
   useEffect(() => {
     const datos = async () => {
-      let query = await (await fetch(urlAPI)).json();
+      let query = await (await fetch(/cotizador/data.json)).json();
       setProp(query.find(({ factor }) => factor === propiedad));
       setUbi(query.find(({ factor }) => factor === ubicacion));
     };
