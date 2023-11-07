@@ -3,7 +3,7 @@ import { FaClipboardList } from 'react-icons/fa6';
 import { FaHouse } from 'react-icons/fa6';
 import { FaCalculator } from 'react-icons/fa6';
 function Navbar() {
-  const logo = '/SegurosUNTREF.webp';
+  const logo = "/SegurosUNTREF.webp";
 
   return (
     <>
