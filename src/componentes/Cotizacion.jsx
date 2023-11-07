@@ -6,7 +6,7 @@ import usePresupuestos from '../hooks/usePresupuestos';
 import Swal from 'sweetalert2';
 import Footer from './Footer';
 
-const Cotizador = () => {
+const Cotizacion = () => {
   const costoM2 = 35.86;
   const [precio, setPrecio] = useState(0);
   const [datos, setDatos] = useState([]);
@@ -100,4 +100,4 @@ const Cotizador = () => {
   );
 };
 
-export default Cotizador;
+export default Cotizacion;

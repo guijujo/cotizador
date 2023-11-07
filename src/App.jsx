@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Index from './componentes/Index';
-import Cotizador from './componentes/Cotizador';
+import Cotizacion from './componentes/Cotizacion';
 import Presupuestos from './componentes/Presupuestos';
 import CotizadorContext from './contextos/CotizadorContext';
 import PresupuestosContext from './contextos/PresupuestosContext';
@@ -22,7 +22,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path='/cotizador' index element={<Index />} />
-              <Route path='/Cotizacion' element={<Cotizador />} />
+              <Route path='/Cotizacion' element={<Cotizacion />} />
               <Route path='/Presupuestos' element={<Presupuestos />} />
             </Routes>
           </BrowserRouter>
