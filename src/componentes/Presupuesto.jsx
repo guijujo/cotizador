@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { FaX } from "react-icons/fa6";
 
-function Presupuesto  ({
+function Presupuesto({
   index,
   fecha,
   metros2,
@@ -14,9 +14,9 @@ function Presupuesto  ({
   const [prop, setProp] = useState(null);
   const [ubi, setUbi] = useState(null);
 
-  useEffect(() => {     
-     async function datos() {
-      const response = await fetch("/data.json")
+  useEffect(() => {
+    async function datos() {
+      const response = await fetch("/data.json");
       const query = await response.json();
       setProp(query.find(({ factor }) => factor === propiedad));
       setUbi(query.find(({ factor }) => factor === ubicacion));
@@ -56,7 +56,7 @@ function Presupuesto  ({
       </li>
     </>
   );
-};
+}
 
 Presupuesto.propTypes = {
   index: PropTypes.number.isRequired,
@@ -69,5 +69,3 @@ Presupuesto.propTypes = {
 };
 
 export default Presupuesto;
-
-
