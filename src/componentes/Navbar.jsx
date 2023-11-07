@@ -3,14 +3,13 @@ import { FaClipboardList } from 'react-icons/fa6';
 import { FaHouse } from 'react-icons/fa6';
 import { FaCalculator } from 'react-icons/fa6';
 function Navbar() {
-  const logo = "/SegurosUNTREF.webp";
 
   return (
     <>
       <div className='nav'>
         <input type='checkbox' id='nav-check' />
         <Link to={'/'} className='nav-header'>
-          <img src={logo} itemType='image/webp' alt='Logo empresa' title='Seguros UNTREF' />
+          <img src="/SegurosUNTREF.webp" itemType='image/webp' alt='Logo empresa' title='Seguros UNTREF' />
         </Link>
         <div className='nav-btn'>
           <label htmlFor='nav-check'>
