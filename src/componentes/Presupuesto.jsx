@@ -14,12 +14,13 @@ const Presupuesto = ({
   const [prop, setProp] = useState(null);
   const [ubi, setUbi] = useState(null);
 
-  useEffect(() => {
-    const datos = async () => {
-let query = await (await fetch("/data.json")).json();
+  useEffect(() => {     
+     async function datos() {
+      const response = await fetch("/data.json")
+      const query = await response.json();
       setProp(query.find(({ factor }) => factor === propiedad));
       setUbi(query.find(({ factor }) => factor === ubicacion));
-    };
+    }
     datos();
   }, [propiedad, ubicacion]);
 
@@ -68,3 +69,5 @@ Presupuesto.propTypes = {
 };
 
 export default Presupuesto;
+
+
