@@ -41,7 +41,7 @@ function Cotizacion() {
 
   useEffect(() => {
     const leer = async () => {
-      const response = await fetch("./data.json");
+      const response = await fetch("/cotizador/data.json");
       const data = await response.json();
       setDatos(data);
     };
