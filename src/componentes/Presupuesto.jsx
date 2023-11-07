@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { FaX } from "react-icons/fa6";
 
-const Presupuesto = ({
+function Presupuesto  ({
   index,
   fecha,
   metros2,
@@ -10,7 +10,7 @@ const Presupuesto = ({
   ubicacion,
   cotizacion,
   onDelete,
-}) => {
+}) {
   const [prop, setProp] = useState(null);
   const [ubi, setUbi] = useState(null);
 
