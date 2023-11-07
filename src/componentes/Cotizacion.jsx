@@ -53,7 +53,7 @@ function Cotizacion() {
   useEffect(() => {
     const leer = async () => {
       try {
-        const response = await fetch('https://github.com/guijujo/datajson', {
+        const response = await fetch('https://guijujo.github.io/datajson/', {
           mode: 'cors',
           headers: {
             'Access-Control-Allow-Origin': '*',
