@@ -7,7 +7,7 @@ function Navbar() {
     <>
       <div className="nav">
         <input type="checkbox" id="nav-check" />
-        <Link to={"/"} className="nav-header">
+        <Link to={"/Cotizador"} className="nav-header">
           <img
             src="/cotizador/SegurosUNTREF.webp"
             alt="Logo empresa"
