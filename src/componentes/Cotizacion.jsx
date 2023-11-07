@@ -101,7 +101,7 @@ function Cotizacion() {
           }
         />
         <label htmlFor="valor">Valor de la cotización $: </label>
-        <input type="text" value={"$" + precio} placeholder="$" readOnly />
+        <input type="text" value={"$" + precio} placeholder="$" id="valor" readOnly />
         <button type="button" onClick={realizarCotizacion}>
           Cotizar
         </button>
