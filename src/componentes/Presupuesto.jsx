@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { FaX } from 'react-icons/fa6'
 
@@ -7,7 +8,7 @@ const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, 
 
   useEffect(() => {
     const datos = async () => {
-      let query = await (await fetch("/cotizador/data.json")).json();
+      let query = await (await fetch("./cotizador/data.json")).json();
       setProp(query.find(({ factor }) => factor === propiedad));
       setUbi(query.find(({ factor }) => factor === ubicacion));
     };
@@ -37,6 +38,16 @@ const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, 
       </li>
     </>
   );
+};
+
+Presupuesto.propTypes = {
+  index: PropTypes.number.isRequired,
+  fecha: PropTypes.string.isRequired,
+  metros2: PropTypes.number.isRequired,
+  propiedad: PropTypes.string.isRequired,
+  ubicacion: PropTypes.string.isRequired,
+  cotizacion: PropTypes.number.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default Presupuesto;
