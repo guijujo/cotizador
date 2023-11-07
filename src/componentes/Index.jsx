@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 const Index = () => {
-  const logo = '/public/SegurosUNTREF.webp';
+  const logo = './public/SegurosUNTREF.webp';
   return (
     <>
       <Navbar />
