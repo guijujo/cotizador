@@ -56,7 +56,9 @@ function Cotizacion() {
         const response = await fetch('/data.json', {
           mode: 'no-cors',
           headers: {
-            'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Headers" : "datos",
+            "Access-Control-Allow-Origin": "https://github.com/guijujo/datajson",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
           }
         });
         const data = await response.json();
