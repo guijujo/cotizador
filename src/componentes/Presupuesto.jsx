@@ -8,7 +8,7 @@ const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, 
 
   useEffect(() => {
     const datos = async () => {
-let query = await (await fetch("https://raw.githubusercontent.com/guijujo/cotizador/master/public/data.json", { method: 'GET' })).json();
+let query = await (await fetch("https://github.com/guijujo/cotizador/blob/master/public/data.json")).json();
       setProp(query.find(({ factor }) => factor === propiedad));
       setUbi(query.find(({ factor }) => factor === ubicacion));
     };
