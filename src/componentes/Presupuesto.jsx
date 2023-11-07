@@ -1,12 +1,20 @@
-import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
-import { FaX } from 'react-icons/fa6'
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+import { FaX } from "react-icons/fa6";
 
-const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, onDelete }) => {
+const Presupuesto = ({
+  index,
+  fecha,
+  metros2,
+  propiedad,
+  ubicacion,
+  cotizacion,
+  onDelete,
+}) => {
   const [prop, setProp] = useState(null);
   const [ubi, setUbi] = useState(null);
-  const urlAPI = "https://guijujo.github.io/datajson"
-
+  const urlAPI = "/cotizador/data.json";
+  
   useEffect(() => {
     const datos = async () => {
       let query = await (await fetch(urlAPI)).json();
@@ -24,17 +32,26 @@ const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, 
   return (
     <>
       <li>
-        <div id='titulo'>
+        <div id="titulo">
           <h4>Fecha: {fecha}</h4>
-          <button id='eliminar' onClick={handleDelete}> <FaX/> </button>
+          <button id="eliminar" onClick={handleDelete}>
+            {" "}
+            <FaX />{" "}
+          </button>
         </div>
-        <div id='propiedades'>
-          <p>Metros: <span>{metros2 + 'm2'}</span></p>
-          <p>Propiedad: <span>{prop && prop.tipo}</span></p>
-          <p>Ubicacion: <span>{ubi && ubi.tipo}</span></p>
+        <div id="propiedades">
+          <p>
+            Metros: <span>{metros2 + "m2"}</span>
+          </p>
+          <p>
+            Propiedad: <span>{prop && prop.tipo}</span>
+          </p>
+          <p>
+            Ubicacion: <span>{ubi && ubi.tipo}</span>
+          </p>
         </div>
-        <div id='cotizacion'>
-          <span>Cotizacion: {'$' + cotizacion} </span>
+        <div id="cotizacion">
+          <span>Cotizacion: {"$" + cotizacion} </span>
         </div>
       </li>
     </>
