@@ -21,7 +21,7 @@ function App() {
         <CotizadorContext.Provider value={{ elementos, setElementos }}>
           <BrowserRouter>
             <Routes>
-              <Route path='/cotizador' index element={<Index />} />
+              <Route path='/' index element={<Index />} />
               <Route path='/Cotizacion' element={<Cotizacion />} />
               <Route path='/Presupuestos' element={<Presupuestos />} />
             </Routes>
