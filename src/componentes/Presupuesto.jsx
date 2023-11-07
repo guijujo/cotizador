@@ -7,7 +7,7 @@ const Presupuesto = ({ index, fecha, metros2, propiedad, ubicacion, cotizacion, 
 
   useEffect(() => {
     const datos = async () => {
-      let query = await (await fetch('/data.json')).json();
+      let query = await (await fetch('/cotizador/data.json')).json();
       setProp(query.find(({ factor }) => factor === propiedad));
       setUbi(query.find(({ factor }) => factor === ubicacion));
     };
