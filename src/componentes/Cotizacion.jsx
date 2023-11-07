@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import useCotizador from "../hooks/useCotizador";
 import usePresupuestos from "../hooks/usePresupuestos";
 import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import Footer from "./Footer";
 
 function Cotizacion() {
@@ -21,6 +22,9 @@ function Cotizacion() {
       setPrecio(cuenta.toFixed(2));
     }
   };
+
+  const MySwal = withReactContent(Swal);
+
   const guardarCotizacion = () => {
     setPresupuestos([
       ...presupuestos,
@@ -37,13 +41,28 @@ function Cotizacion() {
     ]);
     setPrecio(0);
     setElementos({ metros2: 20, propiedad: 0, ubicacion: 0 }); // Resetear los datos
+
+    MySwal.fire({
+      title: "¡Éxito!",
+      text: "La cotización se ha guardado con éxito.",
+      icon: "success",
+      confirmButtonText: "Ok",
+    });
   };
 
   useEffect(() => {
     const leer = async () => {
-      const response = await fetch("https://github.com/guijujo/cotizador/blob/master/data.json");
-      const data = await response.json();
-      setDatos(data);
+      try {
+        const response = await fetch("/data.json");
+        const data = await response.json();
+        setDatos(data);
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Hubo un problema al obtener los datos del JSON!",
+        });
+      }
     };
     leer();
   }, []);
