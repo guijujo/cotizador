@@ -41,7 +41,7 @@ function Cotizacion() {
 
   useEffect(() => {
     const leer = async () => {
-      const response = await fetch("/cotizador/data.json");
+      const response = await fetch("https://github.com/guijujo/cotizador/blob/master/data.json");
       const data = await response.json();
       setDatos(data);
     };
