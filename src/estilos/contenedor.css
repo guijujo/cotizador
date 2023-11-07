@@ -1,0 +1,15 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    gap: .25rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.contenedor img {
+    display: flex;
+    margin: 0 auto;
+}

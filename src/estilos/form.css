@@ -1,0 +1,30 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    padding: .5rem;
+    border-radius: var(--radius);
+    gap: .25rem;
+    margin: 1rem 0;
+    font-family: var(--font);
+}
+
+input {    
+    border-radius: var(--radius);
+    padding: .25rem;
+    font-family: var(--font);
+    width: 15rem;
+    outline: none;
+}
+
+select {
+    border-radius: var(--radius);
+    font-family: var(--font);
+    width: 15rem;
+}
+
+li {
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
