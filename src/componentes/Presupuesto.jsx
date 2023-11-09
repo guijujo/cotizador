@@ -16,10 +16,11 @@ function Presupuesto({
 
   useEffect(() => {
     async function datos() {
-      const response = await fetch("/data.json");
+      const dataUrl = new URL('/data.json', import.meta.url).href;
+      const response = await fetch(dataUrl);
       const query = await response.json();
-      setProp(query.find(({ factor }) => factor == propiedad));
-      setUbi(query.find(({ factor }) => factor == ubicacion));
+      setProp(query.find(({ factor }) => factor === propiedad));
+      setUbi(query.find(({ factor }) => factor === ubicacion));
     }
     datos();
   }, [propiedad, ubicacion]);
