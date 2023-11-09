@@ -53,14 +53,7 @@ function Cotizacion() {
   useEffect(() => {
     const leer = async () => {
       try {
-        const response = await fetch('/data.json', {
-          mode: 'no-cors',
-          headers: {
-            "Access-Control-Allow-Headers" : "datos",
-            "Access-Control-Allow-Origin": "https://github.com/guijujo/datajson",
-            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-          }
-        });
+        const response = await fetch('data.json');
         const data = await response.json();
         setDatos(data);
       } catch (error) {
@@ -81,12 +74,12 @@ function Cotizacion() {
       <form action="" onSubmit={(e) => e.preventDefault()}>
         <h1>Cotizador</h1>
         <Opciones
-          datos={datos.filter(({ categoria }) => categoria === "propiedad")}
+          datos={datos.filter(({ categoria }) => categoria == "propiedad")}
           label={"Tipo de propiedad"}
           tipo={"propiedad"}
         />
         <Opciones
-          datos={datos.filter(({ categoria }) => categoria === "ubicacion")}
+          datos={datos.filter(({ categoria }) => categoria == "ubicacion")}
           label={"Tipo de ubicacion"}
           tipo={"ubicacion"}
         />

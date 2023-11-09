@@ -18,8 +18,8 @@ function Presupuesto({
     async function datos() {
       const response = await fetch("/data.json");
       const query = await response.json();
-      setProp(query.find(({ factor }) => factor === propiedad));
-      setUbi(query.find(({ factor }) => factor === ubicacion));
+      setProp(query.find(({ factor }) => factor == propiedad));
+      setUbi(query.find(({ factor }) => factor == ubicacion));
     }
     datos();
   }, [propiedad, ubicacion]);
