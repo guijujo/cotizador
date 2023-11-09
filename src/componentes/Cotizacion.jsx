@@ -49,11 +49,12 @@ function Cotizacion() {
       confirmButtonText: "Ok",
     });
   };
-
+  
   useEffect(() => {
     const leer = async () => {
       try {
-        const response = await fetch('data.json');
+        const dataUrl = new URL('/data.json', import.meta.url).href;
+        const response = await fetch(dataUrl);
         const data = await response.json();
         setDatos(data);
       } catch (error) {
@@ -66,6 +67,7 @@ function Cotizacion() {
     };
     leer();
   }, []);
+
   
 
   return (
