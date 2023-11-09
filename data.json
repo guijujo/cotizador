@@ -1,4 +1,5 @@
-{
+[
+    {
         "categoria": "propiedad",
         "tipo": "Casa",
         "factor": 1.09
@@ -53,3 +54,4 @@
         "tipo": "Patagonia",
         "factor": 1.00
     }
+]
