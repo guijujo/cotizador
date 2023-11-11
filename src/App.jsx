@@ -1,10 +1,10 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Home from "./componentes/index";
-import Cotizacion from "./componentes/cotizacion";
-import Presupuestos from "./componentes/presupuestos";
-import CotizadorContext from "./contextos/cotizadorContext";
-import PresupuestosContext from "./contextos/presupuestosContext";
-import useLocalstorage from "./hooks/useLocalStorage";
+import Home from "/src/componentes/index";
+import Cotizacion from "/src/componentes/cotizacion";
+import Presupuestos from "/src/componentes/presupuestos";
+import CotizadorContext from "/src/contextos/cotizadorContext";
+import PresupuestosContext from "/src/contextos/presupuestosContext";
+import useLocalstorage from "/src/hooks/useLocalStorage";
 import { useState } from "react";
 
 function App() {
