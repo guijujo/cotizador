@@ -53,22 +53,6 @@ li {
   justify-content: center;
 }
 
-#borrarHistorial {
-  background: red;
-}
-#borrarHistorial:hover {
-  background: rgb(250, 80, 80);
-}
-
-#eliminar {
-  background: red;
-}
-
-#eliminar:hover {
-  transform: scale(1.2rem);
-  background: rgb(250, 80, 80);
-}
-
 @media screen and (min-width:750px) {
     #propiedades {
         grid-template-columns: repeat(3, 1fr);
