@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import PresupuestosContext from '../contextos/PresupuestosContext';
+import { useContext } from "react";
+import PresupuestosContext from "../contextos/presupuestosContext";
 
 const usePresupuestos = () => useContext(PresupuestosContext);
 

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-function Index() {
+import Navbar from "./navbar";
+import Footer from "./footer";
+function Home() {
   return (
     <>
       <Navbar />
       <article className="contenedor">
-        <Link to={"/Cotizacion"}>
+        <Link to={"/cotizacion"}>
           <img
             src="/cotizador/SegurosUNTREF.webp"
             alt="Logo SeguroUNTREF"
@@ -25,4 +25,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Home;

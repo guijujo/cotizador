@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import Opciones from "./Opciones";
-import Navbar from "./Navbar";
+import Opciones from "./opciones";
+import Navbar from "./navbar";
 import useCotizador from "../hooks/useCotizador";
 import usePresupuestos from "../hooks/usePresupuestos";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import Footer from "./Footer";
+import Footer from "./footer";
 
 function Cotizacion() {
   const costoM2 = 35.86;
@@ -39,8 +39,7 @@ function Cotizacion() {
         ).toFixed(2),
       },
     ]);
-    setPrecio(0);
-    setElementos({ metros2: 20, propiedad: 0, ubicacion: 0 }); // Resetear los datos
+    setPrecio(0);    
 
     MySwal.fire({
       title: "¡Éxito!",
@@ -49,11 +48,11 @@ function Cotizacion() {
       confirmButtonText: "Ok",
     });
   };
-  
+
   useEffect(() => {
     const leer = async () => {
       try {
-        const dataUrl = new URL('/data.json', import.meta.url).href;
+        const dataUrl = new URL("/data.json", import.meta.url).href;
         const response = await fetch(dataUrl);
         const data = await response.json();
         setDatos(data);
@@ -67,8 +66,6 @@ function Cotizacion() {
     };
     leer();
   }, []);
-
-  
 
   return (
     <>
@@ -104,7 +101,13 @@ function Cotizacion() {
           }
         />
         <label htmlFor="valor">Valor de la cotización $: </label>
-        <input type="text" value={"$" + precio} placeholder="$" id="valor" readOnly />
+        <input
+          type="text"
+          value={"$" + precio}
+          placeholder="$"
+          id="valor"
+          readOnly
+        />
         <button type="button" onClick={realizarCotizacion}>
           Cotizar
         </button>
