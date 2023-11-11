@@ -40,9 +40,7 @@ function Presupuestos() {
       <Navbar />
       <h2>Historial de cotizaciones</h2>
       {presupuestos.length > 0 && (
-        <button id="borrarHistorial" onClick={borrarHistorial}>
-          Borrar historial
-        </button>
+        <button onClick={borrarHistorial}>Borrar historial</button>
       )}
       <ul>
         {presupuestosActuales.map((elemento, indice) => (
