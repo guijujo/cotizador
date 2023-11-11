@@ -14,7 +14,6 @@ function Navbar() {
             title="Seguros UNTREF"
           />
         </Link>
-        <h1>Seguros UNTREF</h1>
         <div className="nav-btn">
           <label htmlFor="nav-check">
             <span></span>
