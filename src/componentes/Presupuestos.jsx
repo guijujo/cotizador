@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./navbar";
 import usePresupuestos from "../hooks/usePresupuestos";
-import Presupuesto from "./Presupuesto";
-import Footer from "./Footer";
+import Presupuesto from "./presupuesto";
+import Footer from "./footer";
 
 function Presupuestos() {
   const { presupuestos, setPresupuestos } = usePresupuestos();
@@ -40,7 +40,7 @@ function Presupuestos() {
       <Navbar />
       <h2>Historial de cotizaciones</h2>
       {presupuestos.length > 0 && (
-        <button id="borrarHistorial" onClick={borrarHistorial}>Borrar historial</button>
+        <button onClick={borrarHistorial}>Borrar historial</button>
       )}
       <ul>
         {presupuestosActuales.map((elemento, indice) => (

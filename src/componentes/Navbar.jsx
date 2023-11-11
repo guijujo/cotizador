@@ -7,7 +7,7 @@ function Navbar() {
     <>
       <div className="nav">
         <input type="checkbox" id="nav-check" />
-        <Link to={"/Cotizador"} className="nav-header">
+        <Link to={"/"} className="nav-header">
           <img
             src="/cotizador/SegurosUNTREF.webp"
             alt="Logo empresa"
@@ -22,13 +22,13 @@ function Navbar() {
           </label>
         </div>
         <div className="nav-links">
-          <Link to={"/Cotizador"}>
+          <Link to={"/"}>
             <FaHouse /> Inicio
           </Link>
-          <Link to={"/Cotizacion"}>
+          <Link to={"/cotizacion"}>
             <FaCalculator /> Cotizador
           </Link>
-          <Link to={"/Presupuestos"}>
+          <Link to={"/presupuestos"}>
             <FaClipboardList /> Presupuestos
           </Link>
         </div>

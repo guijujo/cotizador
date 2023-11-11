@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./componentes/Index";
-import Cotizacion from "./componentes/Cotizacion";
-import Presupuestos from "./componentes/Presupuestos";
-import CotizadorContext from "./contextos/CotizadorContext";
-import PresupuestosContext from "./contextos/PresupuestosContext";
-import { useState } from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Home from "./componentes/index";
+import Cotizacion from "./componentes/cotizacion";
+import Presupuestos from "./componentes/presupuestos";
+import CotizadorContext from "./contextos/cotizadorContext";
+import PresupuestosContext from "./contextos/presupuestosContext";
 import useLocalstorage from "./hooks/useLocalStorage";
+import { useState } from "react";
 
 function App() {
   const [presupuestos, setPresupuestos] = useLocalstorage("presupuestos", []);
@@ -19,13 +19,13 @@ function App() {
     <>
       <PresupuestosContext.Provider value={{ presupuestos, setPresupuestos }}>
         <CotizadorContext.Provider value={{ elementos, setElementos }}>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
-              <Route path="/Cotizador" index element={<Index />} />
-              <Route path="/Cotizacion" element={<Cotizacion />} />
-              <Route path="/Presupuestos" element={<Presupuestos />} />
+              <Route path="/" index element={<Home />} />
+              <Route path="/cotizacion/" element={<Cotizacion />} />
+              <Route path="/presupuestos/" element={<Presupuestos />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </CotizadorContext.Provider>
       </PresupuestosContext.Provider>
     </>
