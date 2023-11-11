@@ -16,7 +16,7 @@ function Home() {
         <h1>Seguros de viviendas</h1>
         <p>Cotizamos tu vivienda al mejor precio</p>
         <p>Pide tu cotización aquí</p>
-        <Link to={"/Cotizacion"}>
+        <Link to={"/cotizacion"}>
           <button>Cotización</button>
         </Link>
       </article>
