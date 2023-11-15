@@ -39,15 +39,19 @@ function Cotizacion() {
         ).toFixed(2),
       },
     ]);
-    setPrecio(0);    
+    setPrecio(0);
+    setElementos(0);
 
     MySwal.fire({
       title: "¡Éxito!",
       text: "La cotización se ha guardado con éxito.",
       icon: "success",
       confirmButtonText: "Ok",
+    }).then(() => {
+      location.reload();
     });
   };
+
 
   useEffect(() => {
     const leer = async () => {
