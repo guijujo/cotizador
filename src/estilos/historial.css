@@ -49,7 +49,6 @@ li {
   display: flex;
   gap: 0.25rem;
   height: 2rem;
-  width: 60vh;
   justify-content: center;
 }
 
